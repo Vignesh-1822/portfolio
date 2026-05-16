@@ -38,7 +38,7 @@ const About = () => {
             <div>
               <p className="grid-headtext">Hi, I’m Vignesh Gopal Rajendran</p>
               <p className="grid-subtext">
-                With 3 years of experience, I have honed my skills in both frontend and backend dev, creating dynamic
+                With 3 years of professional experience, I have honed my skills in both frontend and backend dev, creating dynamic
                 and responsive websites.
               </p>
             </div>
