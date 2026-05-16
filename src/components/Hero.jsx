@@ -52,7 +52,7 @@ const Hero = () => {
       >
       <div className="w-full mx-auto flex flex-col mt-3 c-space gap-3">
         <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
-          Hi, I am <span className='text-[#915EFF]'>Vignesh</span> <span className="waving-hand">👋</span>
+          Hi, I am <span className='text-[#915EFF]'>Vignesh Gopal Rajendran</span> <span className="waving-hand">👋</span>
         </p>
         <span className="txt-rotate hero_tag text-center text-xl text-gray_gradient" dataPeriod="1000" data-rotate='[ "Software Engineer", "Full Stack Developer", "ML Developer" ]'><span className="wrap">{text}</span></span>
         {/* <p className="hero_tag text-center text-xl text-gray_gradient">Building Products & Brands</p> */}
