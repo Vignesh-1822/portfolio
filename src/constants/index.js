@@ -204,7 +204,7 @@ import {
       title: 'AI Voice Receptionist',
       desc: 'An AI voice receptionist that handles real-time conversations and automates appointment scheduling through voice interactions, with live availability checks and booking.',
       subdesc: 'Built with a voice AI pipeline using Retell and Claude, connected to a FastAPI backend for real-time appointment management.',
-      href: 'https://github.com/Vignesh-1822',
+      href: 'https://ai-receptionist-ten-plum.vercel.app/',
       texture: '/textures/ai-voice.png',
       logo: aiVoiceLogo,
       logoStyle: {
@@ -213,7 +213,7 @@ import {
         boxShadow: '0px 0px 60px 0px #7c3aed44',
       },
       spotlight: spotLight1,
-      isLive: false,
+      isLive: true,
       tags: [
         { id: 1, name: 'Next.js', path: nextLogo },
         { id: 2, name: 'TailwindCSS', path: tailwindLogo },
