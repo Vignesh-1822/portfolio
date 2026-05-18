@@ -43,27 +43,31 @@ const Works = () => {
             My Selected Work
       </p>
       <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full">
-        <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
+        <div className="flex flex-col justify-between min-h-[500px] relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
           <div className="absolute top-0 right-0">
             <img src={currentProject.spotlight} alt="spotlight" className="w-full h-96 object-cover rounded-xl" />
           </div>
 
-          <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg" style={currentProject.logoStyle}>
-            <img className="w-10 h-10 shadow-sm" src={currentProject.logo} alt="logo" />
-          </div>
+          <div>
+            <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg" style={currentProject.logoStyle}>
+              <img className="w-10 h-10 shadow-sm" src={currentProject.logo} alt="logo" />
+            </div>
 
-          <div className="flex flex-col gap-5 text-white-600 my-5">
-            <p className="text-white text-2xl font-semibold animatedText">{currentProject.title}</p>
-
-            <p className="animatedText">{currentProject.desc}</p>
-            <p className="animatedText">{currentProject.subdesc}</p>
+            <div className="flex flex-col gap-5 text-white-600 my-5">
+              <p className="text-white text-2xl font-semibold animatedText">{currentProject.title}</p>
+              <p className="animatedText line-clamp-3">{currentProject.desc}</p>
+              <p className="animatedText line-clamp-2">{currentProject.subdesc}</p>
+            </div>
           </div>
 
           <div className="flex items-center justify-between flex-wrap gap-5">
             <div className="flex items-center gap-3">
               {currentProject.tags.map((tag, index) => (
-                <div key={index} className="tech-logo">
+                <div key={index} className="tech-logo relative group/tag">
                   <img src={tag.path} alt={tag.name} />
+                  <span className="absolute -top-8 left-1/2 -translate-x-1/2 bg-black-300 text-white text-xs px-2 py-1 rounded whitespace-nowrap opacity-0 group-hover/tag:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                    {tag.name}
+                  </span>
                 </div>
               ))}
             </div>

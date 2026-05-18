@@ -9,7 +9,7 @@ const Hero = () => {
   const [text, setText] = useState('');
   const [delta, setDelta] = useState(300 - Math.random() * 100);
   const [index, setIndex] = useState(1);
-  const toRotate = [ "Software Engineer", "Full Stack Developer", "ML Developer" ];
+  const toRotate = [ "Software Engineer", "Full Stack Developer", "AI Developer" ];
   const period = 2000;
 
   useEffect(() => {
@@ -54,7 +54,7 @@ const Hero = () => {
         <p className="sm:text-3xl text-xl font-medium text-white text-center font-generalsans">
           Hi, I am <span className='text-[#915EFF]'>Vignesh Gopal Rajendran</span> <span className="waving-hand">👋</span>
         </p>
-        <span className="txt-rotate hero_tag text-center text-xl text-gray_gradient" dataPeriod="1000" data-rotate='[ "Software Engineer", "Full Stack Developer", "ML Developer" ]'><span className="wrap">{text}</span></span>
+        <span className="txt-rotate hero_tag text-center text-xl text-gray_gradient" dataPeriod="1000" data-rotate='[ "Software Engineer", "Full Stack Developer", "AI Developer" ]'><span className="wrap">{text}</span></span>
         {/* <p className="hero_tag text-center text-xl text-gray_gradient">Building Products & Brands</p> */}
       </div>
       </div>

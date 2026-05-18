@@ -38,8 +38,7 @@ const About = () => {
             <div>
               <p className="grid-headtext">Hi, I’m Vignesh Gopal Rajendran</p>
               <p className="grid-subtext">
-                With 3 years of professional experience, I have honed my skills in both frontend and backend dev, creating dynamic
-                and responsive websites.
+                A Full Stack Developer with experience across frontend, backend, and AI-integrated systems. I&apos;ve built production tools for NOAA, ABC Supply, and early-stage startups.
               </p>
             </div>
           </div>
@@ -52,7 +51,7 @@ const About = () => {
             <div>
               <p className="grid-headtext">Education</p>
               <p className="grid-subtext">
-                I&apos;m currently pursuing my Masters in Information Science at the University of Wisconsin - Madison.
+                Completed my Masters in Information Science at the University of Wisconsin - Madison.
               </p>
             </div>
           </div>

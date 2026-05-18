@@ -1,21 +1,54 @@
 /* eslint-disable react/no-unknown-property */
 import { useRef, useEffect } from 'react';
-import { useGLTF, useAnimations, useVideoTexture } from '@react-three/drei';
+import { useGLTF, useAnimations, useVideoTexture, useTexture } from '@react-three/drei';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
+
+const isImagePath = (path) => /\.(png|jpe?g|webp|gif)$/i.test(path || '');
+
+const ScreenMeshVideo = ({ nodes, texturePath }) => {
+  const txt = useVideoTexture(texturePath);
+  useEffect(() => { if (txt) txt.flipY = false; }, [txt]);
+  return (
+    <mesh
+      name="monitor-screen"
+      geometry={nodes['monitor-screen'].geometry}
+      material={nodes['monitor-screen'].material}
+      position={[0.127, 1.831, 0.511]}
+      rotation={[1.571, -0.005, 0.031]}
+      scale={[0.661, 0.608, 0.401]}>
+      <meshBasicMaterial map={txt} toneMapped={false} />
+    </mesh>
+  );
+};
+
+const ScreenMeshImage = ({ nodes, texturePath }) => {
+  const txt = useTexture(texturePath);
+  useEffect(() => {
+    if (txt) {
+      txt.flipY = false;
+      txt.needsUpdate = true;
+    }
+  }, [txt]);
+  return (
+    <mesh
+      name="monitor-screen"
+      geometry={nodes['monitor-screen'].geometry}
+      material={nodes['monitor-screen'].material}
+      position={[0.127, 1.831, 0.511]}
+      rotation={[1.571, -0.005, 0.031]}
+      scale={[0.661, 0.608, 0.401]}>
+      <meshBasicMaterial map={txt} toneMapped={false} />
+    </mesh>
+  );
+};
 
 const DemoComputer = (props) => {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF('/models/computer.glb');
   const { actions } = useAnimations(animations, group);
-
-  const txt = useVideoTexture(props.texture ? props.texture : '/textures/project/project1.mp4');
-
-  useEffect(() => {
-    if (txt) {
-      txt.flipY = false;
-    }
-  }, [txt]);
+  const texturePath = props.texture || '/textures/project/project1.mp4';
+  const useImage = isImagePath(texturePath);
 
   useGSAP(() => {
     gsap.from(group.current.rotation, {
@@ -23,22 +56,16 @@ const DemoComputer = (props) => {
       duration: 1,
       ease: 'power3.out',
     });
-  }, [txt]);
+  }, [texturePath]);
 
   return (
     <group ref={group} {...props} dispose={null}>
       <group name="Scene">
-        <mesh
-          name="monitor-screen"
-          // castShadow
-          // receiveShadow
-          geometry={nodes['monitor-screen'].geometry}
-          material={nodes['monitor-screen'].material}
-          position={[0.127, 1.831, 0.511]}
-          rotation={[1.571, -0.005, 0.031]}
-          scale={[0.661, 0.608, 0.401]}>
-          <meshBasicMaterial map={txt} toneMapped={false} />
-        </mesh>
+        {useImage ? (
+          <ScreenMeshImage nodes={nodes} texturePath={texturePath} />
+        ) : (
+          <ScreenMeshVideo nodes={nodes} texturePath={texturePath} />
+        )}
         <group name="RootNode" position={[0, 1.093, 0]} rotation={[-Math.PI / 2, 0, -0.033]} scale={0.045}>
           <group
             name="Screen001"

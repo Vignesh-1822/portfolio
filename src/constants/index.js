@@ -33,19 +33,38 @@ import {
   import typescriptLogo from "../assets/typescript.png";
   import nextLogo from "../assets/next-js.png";
   import sassLogo from "../assets/sass.png";
-  import goLogo from "../assets/Go-Logo.png";
+  // import goLogo from "../assets/Go-Logo.png";
   import antDLogo from "../assets/antd.png";
   import ssnLogo from "../assets/SSN.png";
   import springLogo from "../assets/spring.png";
   import javascriptLogo from "../assets/logo-javascript.svg";
   import deskIcon from "../assets/desk_icon.png";
-  import freelanceLogo from "../assets/freelancer.svg";
+  import abcSupplyLogo from "../assets/ABC-Logo.svg";
+  import uwLogo from "../assets/uw-logo.png";
+  import aiVoiceLogo from "../assets/ai_voice.png";
+  import ssecLogo from "../assets/ssec-logo.png";
+  import findmeLogo from "../assets/findme.svg";
+
+  /* Tech Stack Logos */
+
+  import materialuiLogo from "../assets/materialui.svg";
+  import phpLogo from "../assets/php.svg";
+  import graphqlLogo from "../assets/graphql.svg";
+  import openaiLogo from "../assets/openai.svg";
+  import pythonLogo from "../assets/python.svg";
+  import fastapiLogo from "../assets/fastapi.svg";
+  import n8nLogo from "../assets/n8n.svg";
+  import noaaLogo from "../assets/noaa_logo.svg";
+  import slimLogo from "../assets/slim.png";
+  import anthropicLogo from "../assets/anthropic.svg";
 
   /* SpotLights */
 
   import spotLight1 from "../assets/spotlight1.png";
   import spotLight2 from "../assets/spotlight2.png";
   import spotLight3 from "../assets/spotlight3.png";
+  import spotLight4 from "../assets/spotlight4.png";
+  import spotLight5 from "../assets/spotlight5.png";
   
   export const navLinks = [
     {
@@ -138,36 +157,89 @@ import {
   
   export const myProjects = [
     {
-      title: 'Low Code Platform',
-      desc: 'It is a low code platform where we can build applications by dragging and dropping the elements. Also has an workflow mechanism where you can create a workflow and then drag and drop the elements to the workflow and then execute the workflow.',
-      subdesc:
-        'This was mainly built for Product Managers where they can build small web applications easily according to their needs.',
-      href: 'https://github.com/hrhran/low-code-react',
-      texture: '/textures/low-code.mov',
-      logo: tekionLogo,
+      title: 'LightningCast Dashboard',
+      desc: 'An interactive drag-and-drop dashboard built for NOAA to visualize lightning prediction data. Helps meteorologists analyze the probability of lightning strikes within the next 60 minutes.',
+      subdesc: 'Built end-to-end for NOAA in collaboration with a NOAA scientist at the Space Science and Engineering Center.',
+      href: 'https://cimss.ssec.wisc.edu/probsevere/lc/dashboard/#/',
+      texture: '/textures/noaa.mp4',
+      logo: noaaLogo,
+      logoStyle: {
+        backgroundColor: '#0d1b2a',
+        border: '0.2px solid #1b4f72',
+        boxShadow: '0px 0px 60px 0px #1a5276aa',
+      },
+      spotlight: spotLight4,
+      isLive: true,
+      tags: [
+        { id: 1, name: 'React.js', path: reactLogo },
+        { id: 2, name: 'Material UI', path: materialuiLogo },
+        { id: 3, name: 'PHP', path: phpLogo },
+        { id: 4, name: 'Python', path: pythonLogo },
+        { id: 5, name: 'Slim', path: slimLogo },
+      ],
+    },
+    {
+      title: 'Product Image Analysis Tool',
+      desc: 'An AI-powered full-stack tool that automates catalog quality checks by analyzing product images against catalog data and returning validation results.',
+      subdesc: 'Built for ABC Supply Co. to improve accuracy across large product inventories using an AI vision pipeline.',
+      href: 'https://github.com/Vignesh-1822',
+      texture: '/textures/image_analysis.png',
+      logo: abcSupplyLogo,
+      logoStyle: {
+        backgroundColor: '#1a1a2e',
+        // border: '0.2px solid #e94560',
+        boxShadow: '0px 0px 60px 0px #e9456033',
+      },
+      spotlight: spotLight5,
+      isLive: false,
+      tags: [
+        { id: 1, name: 'Next.js', path: nextLogo },
+        { id: 2, name: 'GraphQL', path: graphqlLogo },
+        { id: 3, name: 'OpenAI', path: openaiLogo },
+        { id: 4, name: 'FastAPI', path: fastapiLogo },
+        { id: 5, name: 'n8n', path: n8nLogo },
+      ],
+    },
+    {
+      title: 'AI Voice Receptionist',
+      desc: 'An AI voice receptionist that handles real-time conversations and automates appointment scheduling through voice interactions, with live availability checks and booking.',
+      subdesc: 'Built with a voice AI pipeline using Retell and Claude, connected to a FastAPI backend for real-time appointment management.',
+      href: 'https://github.com/Vignesh-1822',
+      texture: '/textures/ai-voice.png',
+      logo: aiVoiceLogo,
+      logoStyle: {
+        backgroundColor: '#2d1b69',
+        border: '0.2px solid #7c3aed',
+        boxShadow: '0px 0px 60px 0px #7c3aed44',
+      },
       spotlight: spotLight1,
       isLive: false,
       tags: [
-        {
-          id: 1,
-          name: 'React.js',
-          path: reactLogo,
-        },
-        {
-          id: 2,
-          name: 'TailwindCSS',
-          path: tailwindLogo,
-        },
-        {
-          id: 3,
-          name: 'Javascript',
-          path: javascriptLogo,
-        },
-        {
-          id: 4,
-          name: 'Go',
-          path: goLogo,
-        },
+        { id: 1, name: 'Next.js', path: nextLogo },
+        { id: 2, name: 'TailwindCSS', path: tailwindLogo },
+        { id: 3, name: 'Anthropic', path: anthropicLogo },
+        { id: 4, name: 'FastAPI', path: fastapiLogo },
+      ],
+    },
+    {
+      title: 'GOES-R Ice & Snow Dashboard',
+      desc: 'An interactive dashboard for GOES-R ABI ice and snow validation data, visualizing variables like ice concentration, temperature, thickness, and motion.',
+      subdesc: 'Enabled near real-time monitoring of GOES-18 and GOES-19 satellite data with flexible hourly, daily, and weekly views.',
+      href: 'https://cimss.ssec.wisc.edu/goes-cryosphere-products/view/#/Oper_Ice_Concentration',
+      texture: '/textures/goes.mov',
+      logo: ssecLogo,
+      logoStyle: {
+        backgroundColor: '#0a1628',
+        border: '0.2px solid #1e3a5f',
+        boxShadow: '0px 0px 60px 0px #1e3a5f88',
+      },
+      spotlight: spotLight2,
+      isLive: true,
+      tags: [
+        { id: 1, name: 'React.js', path: reactLogo },
+        { id: 2, name: 'Material UI', path: materialuiLogo },
+        { id: 3, name: 'PHP', path: phpLogo },
+        { id: 4, name: 'Slim', path: slimLogo },
       ],
     },
     {
@@ -301,29 +373,48 @@ import {
   export const workExperiences = [
     {
       id: 1,
-      name: 'Tekion',
-      pos: 'Associate Software Engineer',
-      duration: 'July 2023 - August 2024',
-      title: "Initially worked in the Travel Scheduler team which is part of the Tekion Automation Platform(TAP). Later, I transitioned to the Implementation team to support resource expansion. My contributions included UI/UX development, enhancing functionalities, and collaborating across multiple repositories as part of the frontend team.",
-      icon: tekionLogo,
-      animation: 'victory',
+      name: 'ABC Supply Co. Inc.',
+      pos: 'Full Stack Developer',
+      duration: 'January 2026 - May 2026',
+      title: "Working on an AI-powered product image validation system, building a full-stack web application to automate catalog quality checks. The system analyzes product images against catalog data and returns validation results, helping improve accuracy across large product inventories. Involved in designing the frontend, backend APIs, and data pipeline.",
+      icon: abcSupplyLogo,
+      animation: 'clapping',
     },
     {
       id: 2,
-      name: 'Tekion',
-      pos: 'Software Engineer Intern',
-      duration: 'January 2023 - July 2023',
-      title: "I interned for six months as part of the frontend development team, where I built an E-Commerce platform. In the final three months, I contributed to a real-world project at Tekion",
-      icon: tekionLogo,
-      animation: 'salute',
+      name: 'Space Science and Engineering Center',
+      pos: 'Full Stack Developer Intern',
+      duration: 'June 2025 - May 2026',
+      title: "Assisted the webmaster with website development tasks and built a React web application for the next-generation file system to display wildfire alert reports. Also led a project with a NOAA scientist to develop a web application for LightningCast, which predicts the probability of lightning within the next 60 minutes, handling end-to-end development for NOAA.",
+      icon: ssecLogo,
+      animation: 'victory',
     },
     {
       id: 3,
-      name: 'Freelance',
-      pos: 'Frontend Web Developer',
-      duration: 'January 2022 - March 2022',
-      title: "Worked as a Frontend Developer and assisted a lead engineer from virtusa in building a social media platform exclusively for musicians.",
-      icon: freelanceLogo,
+      name: 'FindMe LLC',
+      pos: 'Full Stack Developer',
+      duration: 'September 2025 - December 2025',
+      title: "Worked on a personalized website platform, developing dynamic real-time templates and supporting backend services for secure, scalable user data management.",
+      icon: findmeLogo,
+      animation: 'salute',
+    },
+    {
+      id: 4,
+      name: 'University of Wisconsin - Madison',
+      pos: 'Grader',
+      duration: 'September 2025 - May 2026',
+      title: "Evaluated and graded 50+ student projects in web development, covering HTML, CSS, and PHP. Guided students in effective GitHub usage and provided constructive feedback to support their learning.",
+      icon: uwLogo,
+      logoClass: 'scale-[1.4] object-contain',
       animation: 'clapping',
+    },
+    {
+      id: 5,
+      name: 'Tekion Corp',
+      pos: 'Associate Software Engineer',
+      duration: 'January 2023 - August 2024',
+      title: "Worked as a Software Engineer specializing in frontend development, collaborating with cross-functional teams to deliver scalable solutions. Improved code coverage, ensured zero production bugs, and contributed to multiple repositories. Took features from ideation to deployment with a focus on product performance and user experience.",
+      icon: tekionLogo,
+      animation: 'salute',
     },
   ];

@@ -25,7 +25,7 @@ const Experience = () => {
               <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
 
               <Suspense fallback={<CanvasLoader />}>
-                <Developer position-y={-3} scale={3} animationName={animationName} />
+                <Developer position-y={-3} scale={2.5} animationName={animationName} />
               </Suspense>
             </Canvas>
           </div>
@@ -41,7 +41,7 @@ const Experience = () => {
                   className="work-content_container group">
                   <div className="flex flex-col h-full justify-start items-center py-2">
                     <div className="work-content_logo">
-                      <img className="w-full h-full" src={item.icon} alt="" />
+                      <img className={`w-full h-full ${item.logoClass ?? ''}`} src={item.icon} alt="" />
                     </div>
 
                     <div className="work-content_bar" />
