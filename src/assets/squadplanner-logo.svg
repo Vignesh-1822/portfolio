@@ -1,0 +1,18 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>SquadPlanner AI — route between travelers</title>
+  <defs>
+    <linearGradient id="sp" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34d399"/><stop offset="1" stop-color="#0ea5e9"/>
+    </linearGradient>
+    <linearGradient id="sp2" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#6ee7b7"/><stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="46" fill="none" stroke="url(#sp)" stroke-width="4" opacity=".45"/>
+  <path d="M28 78 C 44 78, 44 46, 60 46 S 76 74, 92 74" fill="none" stroke="url(#sp2)"
+        stroke-width="5" stroke-linecap="round" stroke-dasharray="9 9"/>
+  <circle cx="28" cy="78" r="9" fill="#34d399"/>
+  <circle cx="60" cy="46" r="9" fill="#38bdf8"/>
+  <circle cx="92" cy="74" r="9" fill="#6ee7b7"/>
+  <path d="M60 20 l7 12 h-14 z" fill="#a7f3d0"/>
+</svg>

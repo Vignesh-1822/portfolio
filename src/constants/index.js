@@ -44,6 +44,11 @@ import {
   import aiVoiceLogo from "../assets/ai_voice.png";
   import ssecLogo from "../assets/ssec-logo.png";
   import findmeLogo from "../assets/findme.svg";
+  import worldseedLogo from "../assets/worldseed-logo.svg";
+  import squadplannerLogo from "../assets/squadplanner-logo.svg";
+  import echomeLogo from "../assets/echome-logo.svg";
+  import syncfitLogo from "../assets/syncfit-logo.svg";
+  import interviewAgentLogo from "../assets/interview-agent-logo.svg";
 
   /* Tech Stack Logos */
 
@@ -57,6 +62,13 @@ import {
   import noaaLogo from "../assets/noaa_logo.svg";
   import slimLogo from "../assets/slim.png";
   import anthropicLogo from "../assets/anthropic.svg";
+  import threejsLogo from "../assets/threejs-white.svg";
+  import awsLambdaLogo from "../assets/awslambda.svg";
+  import langgraphLogo from "../assets/langchain.svg";
+  import mongodbLogo from "../assets/tech/mongodb.png";
+  import telegramLogo from "../assets/telegram.svg";
+  import bashLogo from "../assets/gnubash.svg";
+  import appleLogo from "../assets/apple.svg";
 
   /* SpotLights */
 
@@ -240,6 +252,113 @@ import {
         { id: 2, name: 'Material UI', path: materialuiLogo },
         { id: 3, name: 'PHP', path: phpLogo },
         { id: 4, name: 'Slim', path: slimLogo },
+      ],
+    },
+    {
+      title: 'Worldseed - AI 3D World Generator',
+      desc: 'A procedurally generated 3D world that runs entirely in the browser. Every mountain, tree, ripple and cloud is generated from a single seed, with no 3D models, assets or textures.',
+      subdesc: 'Describe a world in plain English and an LLM translates it into engine parameters, so the world rebuilds live and every result is a shareable link.',
+      href: 'https://github.com/Vignesh-1822/fable-3Dworld',
+      texture: '/textures/worldseed.png',
+      logo: worldseedLogo,
+      logoStyle: {
+        backgroundColor: '#141a35',
+        border: '0.2px solid #2b3566',
+        boxShadow: '0px 0px 60px 0px #4a5cc466',
+      },
+      spotlight: spotLight3,
+      isLive: false,
+      tags: [
+        { id: 1, name: 'React.js', path: reactLogo },
+        { id: 2, name: 'TypeScript', path: typescriptLogo },
+        { id: 3, name: 'Three.js', path: threejsLogo },
+        { id: 4, name: 'OpenAI', path: openaiLogo },
+        { id: 5, name: 'AWS Lambda', path: awsLambdaLogo },
+      ],
+    },
+    {
+      title: 'SquadPlanner AI',
+      desc: 'A group trip planner where an agent workflow scores destinations, pauses for the group leader to approve one, pulls live flights, stays and weather, then streams back a day-by-day itinerary.',
+      subdesc: 'Built with FastAPI and LangGraph with checkpointed human-in-the-loop steps, so an edit like "make Day 2 cheaper" reruns only the affected part of the graph.',
+      href: 'https://ai-squad-planner-v2-0.vercel.app/',
+      texture: '/textures/squadplanner.png',
+      logo: squadplannerLogo,
+      logoStyle: {
+        backgroundColor: '#0b2230',
+        border: '0.2px solid #14505c',
+        boxShadow: '0px 0px 60px 0px #34d39944',
+      },
+      spotlight: spotLight1,
+      isLive: true,
+      tags: [
+        { id: 1, name: 'React.js', path: reactLogo },
+        { id: 2, name: 'FastAPI', path: fastapiLogo },
+        { id: 3, name: 'LangGraph', path: langgraphLogo },
+        { id: 4, name: 'MongoDB', path: mongodbLogo },
+        { id: 5, name: 'Anthropic', path: anthropicLogo },
+      ],
+    },
+    {
+      title: 'EchoMe - AI Digital Twin',
+      desc: 'An open-source AI digital twin. Add a profile, your documents and a short voice clip, and visitors can hold a spoken or text conversation with a clearly labelled AI version of you.',
+      subdesc: 'Answers are grounded in your own documents through RAG and spoken back in a cloned voice, and the twin says so when it does not know something.',
+      href: 'https://github.com/Vignesh-1822/EchoMe',
+      texture: '/textures/echome.png',
+      logo: echomeLogo,
+      logoStyle: {
+        backgroundColor: '#1d1442',
+        border: '0.2px solid #4c2ea8',
+        boxShadow: '0px 0px 60px 0px #7c3aed4d',
+      },
+      spotlight: spotLight5,
+      isLive: false,
+      tags: [
+        { id: 1, name: 'Python', path: pythonLogo },
+        { id: 2, name: 'FastAPI', path: fastapiLogo },
+        { id: 3, name: 'React.js', path: reactLogo },
+        { id: 4, name: 'Anthropic', path: anthropicLogo },
+      ],
+    },
+    {
+      title: 'SyncFit - AI Fitness Coach',
+      desc: 'A personal AI fitness coach that lives in a Telegram DM. It logs meals from plain language or photos, syncs wearable data, and coaches across food, movement and recovery together.',
+      subdesc: 'There is no app code behind it: the LLM is the runtime, Markdown files are the database, and cron drives the scheduled check-ins and the Monday weigh-in.',
+      href: 'https://github.com/Vignesh-1822/fitness-ai-assistant',
+      texture: '/textures/syncfit.png',
+      logo: syncfitLogo,
+      logoStyle: {
+        backgroundColor: '#0a2a2a',
+        border: '0.2px solid #12595a',
+        boxShadow: '0px 0px 60px 0px #22d3a644',
+      },
+      spotlight: spotLight2,
+      isLive: false,
+      tags: [
+        { id: 1, name: 'OpenAI', path: openaiLogo },
+        { id: 2, name: 'Telegram', path: telegramLogo },
+        { id: 3, name: 'Bash', path: bashLogo },
+        { id: 4, name: 'Apple Health', path: appleLogo },
+      ],
+    },
+    {
+      title: 'AI Interview Agent',
+      desc: 'An AI interview application that runs an adaptive screening conversation, probes further when an answer is thin, and scores candidates against a rubric while the interview is still running.',
+      subdesc: 'A React candidate UI and admin dashboard over a FastAPI service, driven by a LangGraph agent state machine.',
+      href: 'https://github.com/Vignesh-1822/ai-interview-agent',
+      texture: '/textures/ai-interview.png',
+      logo: interviewAgentLogo,
+      logoStyle: {
+        backgroundColor: '#141a33',
+        border: '0.2px solid #313c73',
+        boxShadow: '0px 0px 60px 0px #818cf84d',
+      },
+      spotlight: spotLight4,
+      isLive: false,
+      tags: [
+        { id: 1, name: 'React.js', path: reactLogo },
+        { id: 2, name: 'FastAPI', path: fastapiLogo },
+        { id: 3, name: 'LangGraph', path: langgraphLogo },
+        { id: 4, name: 'Python', path: pythonLogo },
       ],
     },
     {

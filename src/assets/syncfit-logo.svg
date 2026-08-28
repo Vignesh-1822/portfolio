@@ -1,0 +1,66 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img">
+  <title>SyncFit — sync ring with data nodes</title>
+  <defs>
+    <style>
+      @keyframes spin { from{stroke-dashoffset:0} to{stroke-dashoffset:-264} }
+      @keyframes glow { 0%,100%{opacity:0.2} 50%{opacity:0.5} }
+      @keyframes fp1  { 0%,100%{opacity:1} 50%{opacity:0.4} }
+      @keyframes fp2  { 0%,100%{opacity:1} 50%{opacity:0.4} }
+      @keyframes fp3  { 0%,100%{opacity:1} 50%{opacity:0.4} }
+      @keyframes fp4  { 0%,100%{opacity:1} 50%{opacity:0.4} }
+      .spin { animation: spin 3s linear infinite; }
+      .glow { animation: glow 2s ease-in-out infinite; }
+      .fp1  { animation: fp1 2s ease-in-out 0s   infinite; }
+      .fp2  { animation: fp2 2s ease-in-out .5s  infinite; }
+      .fp3  { animation: fp3 2s ease-in-out 1s   infinite; }
+      .fp4  { animation: fp4 2s ease-in-out 1.5s infinite; }
+    </style>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#84cc16"/>
+    </linearGradient>
+    <radialGradient id="coreGlow">
+      <stop offset="0%"   stop-color="white" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="120" height="120" rx="26" fill="url(#bg)"/>
+
+  <!-- Orbit guide ring -->
+  <circle cx="60" cy="60" r="42" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="1" stroke-dasharray="2,4"/>
+
+  <!-- Spinning sync arc -->
+  <circle cx="60" cy="60" r="42" fill="none" stroke="white" stroke-width="3"
+    stroke-dasharray="35 228" class="spin" stroke-linecap="round" opacity="0.95"/>
+
+  <!-- Top node — Apple Watch -->
+  <circle cx="60" cy="18" r="11" fill="white" opacity="0.95" class="fp1"/>
+  <rect x="56" y="13" width="8" height="11" rx="2.5" fill="#06b6d4"/>
+
+  <!-- Right node — Garmin -->
+  <circle cx="102" cy="60" r="11" fill="white" opacity="0.95" class="fp2"/>
+  <circle cx="102" cy="60" r="5" fill="#84cc16"/>
+
+  <!-- Bottom node — Nutrition -->
+  <circle cx="60" cy="102" r="11" fill="white" opacity="0.95" class="fp3"/>
+  <path d="M57 99 Q60 95 63 99 L62 107 Q60 109 58 107Z" fill="#f59e0b"/>
+
+  <!-- Left node — Sleep -->
+  <circle cx="18" cy="60" r="11" fill="white" opacity="0.95" class="fp4"/>
+  <path d="M15 57 Q22 57 20 64 Q13 64 15 57Z" fill="#a855f7"/>
+
+  <!-- Spokes -->
+  <line x1="60" y1="29"  x2="60" y2="47"  stroke="white" stroke-width="1" stroke-dasharray="2,2" opacity="0.5"/>
+  <line x1="91" y1="60"  x2="73" y2="60"  stroke="white" stroke-width="1" stroke-dasharray="2,2" opacity="0.5"/>
+  <line x1="60" y1="91"  x2="60" y2="73"  stroke="white" stroke-width="1" stroke-dasharray="2,2" opacity="0.5"/>
+  <line x1="29" y1="60"  x2="47" y2="60"  stroke="white" stroke-width="1" stroke-dasharray="2,2" opacity="0.5"/>
+
+  <!-- AI core glow -->
+  <circle cx="60" cy="60" r="18" fill="url(#coreGlow)" class="glow"/>
+  <!-- AI core -->
+  <circle cx="60" cy="60" r="12" fill="white" opacity="0.95"/>
+  <circle cx="60" cy="60" r="6"  fill="#06b6d4"/>
+  <circle cx="60" cy="60" r="2.5" fill="white"/>
+</svg>
