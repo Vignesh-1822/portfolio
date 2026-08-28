@@ -138,6 +138,178 @@
 }
 
 /* canvas- styles */
+
+/* 3d scene loader: a small neural net firing while the model streams in */
+.nn-loader {
+  @apply flex flex-col items-center gap-4 select-none;
+  width: 220px;
+}
+
+.nn-loader__net {
+  width: 220px;
+  height: 124px;
+  overflow: visible;
+}
+
+.nn-loader__edge {
+  stroke: rgba(145, 94, 255, 0.18);
+  stroke-width: 1;
+}
+
+.nn-loader__pulse {
+  stroke: #b79dff;
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-dasharray: 7 130;
+  animation: nnFlow 1.9s linear infinite;
+  filter: drop-shadow(0 0 4px rgba(145, 94, 255, 0.8));
+}
+
+.nn-loader__node {
+  fill: #150f2e;
+  stroke: #915eff;
+  stroke-width: 1.6;
+  transform-origin: center;
+  transform-box: fill-box;
+  animation: nnPulse 1.9s ease-in-out infinite;
+}
+
+.nn-loader__meter {
+  @apply w-full h-[3px] rounded-full overflow-hidden;
+  background: rgba(145, 94, 255, 0.16);
+}
+
+.nn-loader__meter span {
+  @apply block h-full rounded-full;
+  background: linear-gradient(90deg, #6d4bd8, #b79dff);
+  transition: width 0.25s ease-out;
+}
+
+.nn-loader__label {
+  @apply flex items-center justify-between w-full text-[11px] tracking-[0.18em] uppercase;
+  color: #8f8ba8;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.nn-loader__label b {
+  color: #d8ccff;
+  font-weight: 600;
+}
+
+/* hero: "this model can be spun" affordance */
+.rotate-hint {
+  @apply flex items-center gap-2.5 rounded-full px-5 py-2.5 text-sm font-medium whitespace-nowrap;
+  color: #d6d9e9;
+  background: rgba(21, 16, 48, 0.55);
+  border: 1px solid rgba(145, 94, 255, 0.35);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 0 36px rgba(145, 94, 255, 0.18);
+  animation: hintFloat 3.4s ease-in-out infinite;
+}
+
+.rotate-hint__orbit {
+  width: 20px;
+  height: 20px;
+  fill: none;
+}
+
+.rotate-hint__ring {
+  stroke: #b79dff;
+  stroke-width: 1.4;
+  stroke-dasharray: 3 4;
+  animation: hintOrbit 3s linear infinite;
+}
+
+.rotate-hint__core {
+  fill: #915eff;
+  animation: hintGlow 2.4s ease-in-out infinite;
+}
+
+.rotate-hint__arrow {
+  color: #915eff;
+  font-size: 20px;
+  line-height: 1;
+  animation: hintNudge 1.8s ease-in-out infinite;
+}
+
+.rotate-hint__arrow--right {
+  animation-name: hintNudgeRight;
+}
+
+@keyframes nnFlow {
+  from {
+    stroke-dashoffset: 137;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes nnPulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+@keyframes hintFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes hintOrbit {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -42;
+  }
+}
+
+@keyframes hintGlow {
+  0%,
+  100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes hintNudge {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateX(-4px);
+    opacity: 1;
+  }
+}
+
+@keyframes hintNudgeRight {
+  0%,
+  100% {
+    transform: translateX(0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translateX(4px);
+    opacity: 1;
+  }
+}
+
 .canvas-loader {
   font-size: 10px;
   width: 1em;

@@ -32,7 +32,7 @@ const Computers = ({ isMobile }) => {
   );
 };
 
-const ComputersCanvas = () => {
+const ComputersCanvas = ({ onInteract }) => {
   const [isMobile, setIsMobile] = useState(false);
   const canvasRef = useRef();
 
@@ -73,12 +73,14 @@ const ComputersCanvas = () => {
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
       gl={{ preserveDrawingBuffer: true }}
+      className='cursor-grab active:cursor-grabbing'
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
           enableZoom={false}
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
+          onStart={onInteract}
         />
         <Computers isMobile={isMobile} />
       </Suspense>
