@@ -48,7 +48,6 @@ import {
   import squadplannerLogo from "../assets/squadplanner-logo.svg";
   import echomeLogo from "../assets/echome-logo.svg";
   import syncfitLogo from "../assets/syncfit-logo.svg";
-  import interviewAgentLogo from "../assets/interview-agent-logo.svg";
 
   /* Tech Stack Logos */
 
@@ -256,8 +255,8 @@ import {
     },
     {
       title: 'Worldseed - AI 3D World Generator',
-      desc: 'A procedurally generated 3D world that runs entirely in the browser. Every mountain, tree, ripple and cloud is generated from a single seed, with no 3D models, assets or textures.',
-      subdesc: 'Describe a world in plain English and an LLM translates it into engine parameters, so the world rebuilds live and every result is a shareable link.',
+      desc: 'A procedurally generated 3D world that runs in the browser. Every mountain, tree and cloud is built from a single seed, with no 3D models or assets.',
+      subdesc: 'Describe a world in plain English and an LLM turns it into engine parameters, live.',
       href: 'https://github.com/Vignesh-1822/fable-3Dworld',
       texture: '/textures/worldseed.png',
       logo: worldseedLogo,
@@ -278,8 +277,8 @@ import {
     },
     {
       title: 'SquadPlanner AI',
-      desc: 'A group trip planner where an agent workflow scores destinations, pauses for the group leader to approve one, pulls live flights, stays and weather, then streams back a day-by-day itinerary.',
-      subdesc: 'Built with FastAPI and LangGraph with checkpointed human-in-the-loop steps, so an edit like "make Day 2 cheaper" reruns only the affected part of the graph.',
+      desc: 'A group trip planner where an agent workflow scores destinations, pulls live flights, stays and weather, then streams back a day-by-day itinerary.',
+      subdesc: 'Built with FastAPI and LangGraph, with a checkpointed pause for the leader to approve the destination.',
       href: 'https://ai-squad-planner-v2-0.vercel.app/',
       texture: '/textures/squadplanner.png',
       logo: squadplannerLogo,
@@ -300,8 +299,8 @@ import {
     },
     {
       title: 'EchoMe - AI Digital Twin',
-      desc: 'An open-source AI digital twin. Add a profile, your documents and a short voice clip, and visitors can hold a spoken or text conversation with a clearly labelled AI version of you.',
-      subdesc: 'Answers are grounded in your own documents through RAG and spoken back in a cloned voice, and the twin says so when it does not know something.',
+      desc: 'An open-source AI digital twin. Add a profile, documents and a short voice clip, and visitors can talk to an AI version of you.',
+      subdesc: 'Answers are grounded in your own documents through RAG and spoken back in a cloned voice.',
       href: 'https://github.com/Vignesh-1822/EchoMe',
       texture: '/textures/echome.png',
       logo: echomeLogo,
@@ -321,8 +320,8 @@ import {
     },
     {
       title: 'SyncFit - AI Fitness Coach',
-      desc: 'A personal AI fitness coach that lives in a Telegram DM. It logs meals from plain language or photos, syncs wearable data, and coaches across food, movement and recovery together.',
-      subdesc: 'There is no app code behind it: the LLM is the runtime, Markdown files are the database, and cron drives the scheduled check-ins and the Monday weigh-in.',
+      desc: 'A personal AI fitness coach in a Telegram DM. It logs meals from text or photos, syncs wearable data, and coaches across food and recovery.',
+      subdesc: 'No app code: the LLM is the runtime, Markdown files are the database, and cron runs the check-ins.',
       href: 'https://github.com/Vignesh-1822/fitness-ai-assistant',
       texture: '/textures/syncfit.png',
       logo: syncfitLogo,
@@ -338,27 +337,6 @@ import {
         { id: 2, name: 'Telegram', path: telegramLogo },
         { id: 3, name: 'Bash', path: bashLogo },
         { id: 4, name: 'Apple Health', path: appleLogo },
-      ],
-    },
-    {
-      title: 'AI Interview Agent',
-      desc: 'An AI interview application that runs an adaptive screening conversation, probes further when an answer is thin, and scores candidates against a rubric while the interview is still running.',
-      subdesc: 'A React candidate UI and admin dashboard over a FastAPI service, driven by a LangGraph agent state machine.',
-      href: 'https://github.com/Vignesh-1822/ai-interview-agent',
-      texture: '/textures/ai-interview.png',
-      logo: interviewAgentLogo,
-      logoStyle: {
-        backgroundColor: '#141a33',
-        border: '0.2px solid #313c73',
-        boxShadow: '0px 0px 60px 0px #818cf84d',
-      },
-      spotlight: spotLight4,
-      isLive: false,
-      tags: [
-        { id: 1, name: 'React.js', path: reactLogo },
-        { id: 2, name: 'FastAPI', path: fastapiLogo },
-        { id: 3, name: 'LangGraph', path: langgraphLogo },
-        { id: 4, name: 'Python', path: pythonLogo },
       ],
     },
     {
