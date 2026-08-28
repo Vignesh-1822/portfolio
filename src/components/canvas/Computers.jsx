@@ -32,7 +32,13 @@ const Computers = ({ isMobile }) => {
   );
 };
 
-const ComputersCanvas = ({ onInteract }) => {
+/* Renders once the model has resolved, so the hero knows the scene is up. */
+const SceneReady = ({ onReady }) => {
+  useEffect(() => onReady?.(), [onReady]);
+  return null;
+};
+
+const ComputersCanvas = ({ onInteract, onReady }) => {
   const [isMobile, setIsMobile] = useState(false);
   const canvasRef = useRef();
 
@@ -83,6 +89,7 @@ const ComputersCanvas = ({ onInteract }) => {
           onStart={onInteract}
         />
         <Computers isMobile={isMobile} />
+        <SceneReady onReady={onReady} />
       </Suspense>
 
       <Preload all />

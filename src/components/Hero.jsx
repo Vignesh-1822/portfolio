@@ -1,6 +1,5 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { useProgress } from "@react-three/drei";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 import RotateHint from "./RotateHint";
@@ -13,13 +12,10 @@ const Hero = () => {
   const [index, setIndex] = useState(1);
   const [sceneReady, setSceneReady] = useState(false);
   const [hasRotated, setHasRotated] = useState(false);
-  const { progress } = useProgress();
+  const handleSceneReady = useCallback(() => setSceneReady(true), []);
+  const handleInteract = useCallback(() => setHasRotated(true), []);
   const toRotate = [ "Software Engineer", "Full Stack Developer", "AI Developer" ];
   const period = 2000;
-
-  useEffect(() => {
-    if (progress === 100) setSceneReady(true);
-  }, [progress]);
 
   useEffect(() => {
     let ticker = setInterval(() => {
@@ -68,7 +64,7 @@ const Hero = () => {
       </div>
       </div>
 
-      <ComputersCanvas onInteract={() => setHasRotated(true)} />
+      <ComputersCanvas onInteract={handleInteract} onReady={handleSceneReady} />
 
       <RotateHint visible={sceneReady && !hasRotated} />
 
